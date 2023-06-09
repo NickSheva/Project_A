@@ -1,8 +1,9 @@
 """The sieve of the eratosphenes """
 from functools import reduce
+from typing import Any
 
 
-def prime(num=100):
+def prime(num: int = 100) -> Any:
     """
     1. Начинает с первого числа 2 и увеличивает его на единицу на каждом шаге процесса
     до тех пор, пока не будет найдено простое число x. Мы знаем, что x простое, если оно осталось
@@ -21,4 +22,3 @@ def prime(num=100):
 
 if __name__ == '__main__':
     prime()
-    
