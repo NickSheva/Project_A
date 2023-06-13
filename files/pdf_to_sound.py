@@ -3,6 +3,7 @@
 import pdfplumber
 from gtts import gTTS
 from pathlib import Path
+import os
 
 
 def pdf_to_mp3(path='file.pdf', lang='ru'):
@@ -10,7 +11,12 @@ def pdf_to_mp3(path='file.pdf', lang='ru'):
         with pdfplumber.PDF(open(file=path, mode='rb')) as pdf:
             pages = [page.extract_text() for page in pdf.pages]
             txt = ''.join(pages).replace('/n', '')
-            return txt
+
+        my_audio = gTTS(text= txt, lang= lang, slow=False)
+        file_name = Path(path).stem
+        my_audio.save(f"{file_name}.mp3")
+        print(f"[+] {file_name}.mp3 has saved successfully\n")
+        return os.system(f"afplay {file_name}.mp3")
 
     else:
         return 'File does not exit'
