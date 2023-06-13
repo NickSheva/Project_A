@@ -9,7 +9,8 @@ def pdf_to_mp3(path='file.pdf', lang='ru'):
     if Path(path).is_file() and Path(path).suffix == '.pdf':
         with pdfplumber.PDF(open(file=path, mode='rb')) as pdf:
             pages = [page.extract_text() for page in pdf.pages]
-            return pages
+            txt = ''.join(pages).replace('/n', '')
+            return txt
 
     else:
         return 'File does not exit'
