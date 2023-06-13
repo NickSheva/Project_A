@@ -2,7 +2,10 @@
 ## Зависимости
 import re
 from typing import Union
+from art import *
 
+
+tprint('find length', font='random')
 ## Данные
 poem = """
 Call me Ishmael. Some years ago - never mind how long precisely - having
