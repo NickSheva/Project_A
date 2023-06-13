@@ -4,10 +4,13 @@ import pdfplumber
 from gtts import gTTS
 from pathlib import Path
 import os
+from art import *
 
 
 def pdf_to_mp3(path='file.pdf', lang='ru'):
     if Path(path).is_file() and Path(path).suffix == '.pdf':
+        print(f"[+] Original file: {Path(path).name}")
+        print("[+] Processing....")
         with pdfplumber.PDF(open(file=path, mode='rb')) as pdf:
             pages = [page.extract_text() for page in pdf.pages]
             txt = ''.join(pages).replace('/n', '')
@@ -23,6 +26,7 @@ def pdf_to_mp3(path='file.pdf', lang='ru'):
 
 
 def main():
+    tprint("PDF >> TO >> MP3", font='white bulb')
     path = input("\nEnter the file's path:\n")
     print(pdf_to_mp3(path=path))
 
