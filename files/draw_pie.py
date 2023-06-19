@@ -18,6 +18,7 @@ patches, texts, auto = ax.pie(sales, labels=labels, explode=explode, colors=colo
                               startangle=150, autopct="%1.1f%%")
 
 plt.legend(patches, labels,loc= (1, 0.5))# bbox_to_anchor=(0.85, 1.15))
+plt.title("Watch")
 ax.axis("off")
 
 plt.show()
