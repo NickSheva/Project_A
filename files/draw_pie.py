@@ -14,6 +14,10 @@ colors = ["green", "cyan", "lightyellow", "red", "yellow", "pink",
 fig, ax = plt.subplots()
 ax.pie(sales, labels=labels, explode=explode, colors=colors, shadow=True,
        startangle=150, autopct="%1.1f%%")
-ax.axis("equal")
+patches, texts, auto = ax.pie(sales, labels=labels, explode=explode, colors=colors, shadow=True,
+                              startangle=150, autopct="%1.1f%%")
+
+plt.legend(patches, labels,loc= (1, 0.5))# bbox_to_anchor=(0.85, 1.15))
+ax.axis("off")
 
 plt.show()
