@@ -10,7 +10,7 @@ explode = [0.1, 0, 0, 0, 0.2, 0, 0, 0.1, 0, 0]
 
 
 fig, ax = plt.subplots()
-ax.pie(sales, labels=labels, explode=explode, shadow=True, startangle=150)
+ax.pie(sales, labels=labels, explode=explode, shadow=True, startangle=150, autopct="%1.1f%%")
 ax.axis("equal")
 
 plt.show()
