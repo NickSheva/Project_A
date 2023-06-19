@@ -10,15 +10,14 @@ explode = [0.1, 0, 0, 0, 0.2, 0, 0, 0.1, 0, 0]
 colors = ["green", "cyan", "lightyellow", "red", "yellow", "pink",
           "lightgray", "Lightblue", "lightgreen", "orange"]
 
-
 fig, ax = plt.subplots()
 ax.pie(sales, labels=labels, explode=explode, colors=colors, shadow=True,
        startangle=150, autopct="%1.1f%%")
 patches, texts, auto = ax.pie(sales, labels=labels, explode=explode, colors=colors, shadow=True,
                               startangle=150, autopct="%1.1f%%")
 
-plt.legend(patches, labels,loc= (1, 0.5))# bbox_to_anchor=(0.85, 1.15))
-plt.title("Watch")
+plt.legend(patches, labels, loc=(1, 0.5))  # bbox_to_anchor=(0.85, 1.15))
+plt.title("WATCHES  2022", fontweight='bold')
 ax.axis("off")
 
 plt.show()
